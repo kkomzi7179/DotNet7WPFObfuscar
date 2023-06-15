@@ -8,15 +8,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Obfuscar" Version="2.2.37">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="cd $(ProjectDir)&#xD;&#xA;&quot;$(Obfuscar)&quot; Obfuscar.xml&#xD;&#xA;copy &quot;$(OutputPath)\Obfuscated\$(AssemblyName).dll&quot; &quot;$(OutputPath)\$(AssemblyName).dll&quot;" />
+  </Target>-->
+  
+  <Target Name="Obfuscation" AfterTargets="AfterCompile" Condition="'$(Configuration)' == 'Release'">
+    <!--Optional to log a message.-->
+    <Message Text="Obfuscating..." Importance="high" />
+    <Exec Command="obfuscar.console Obfuscar.xml" />
+    <Exec Command="COPY &quot;$(ProjectDir)$(IntermediateOutputPath)Obfuscated\$(TargetFileName)&quot; &quot;$(ProjectDir)$(IntermediateOutputPath)$(TargetFileName)&quot;" />
   </Target>
-
+  
 </Project>

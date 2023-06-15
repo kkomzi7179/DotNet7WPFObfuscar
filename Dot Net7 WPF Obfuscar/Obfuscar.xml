@@ -1,6 +1,6 @@
 ﻿<?xml version='1.0'?>
 <Obfuscator>
-  <Var name="InPath" value=".\bin\Debug\net7.0-windows" />
+  <Var name="InPath" value=".\obj\Release\net7.0-windows" />
   <Var name="OutPath" value="$(InPath)\Obfuscated" />
   
   <Var name="KeepPublicApi" value="true" />
