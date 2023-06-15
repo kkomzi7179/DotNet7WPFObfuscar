@@ -1,0 +1,14 @@
+﻿<?xml version='1.0'?>
+<Obfuscator>
+  <Var name="InPath" value=".\bin\Debug\net7.0-windows" />
+  <Var name="OutPath" value="$(InPath)\Obfuscated" />
+  
+  <Var name="KeepPublicApi" value="true" />
+  <Var name="HidePrivateApi" value="true" />
+  <Var name="HideStrings" value="true" />
+
+  <AssemblySearchPath path="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\7.0.5" />
+  <AssemblySearchPath path="C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App\7.0.5" />
+  
+  <Module file="$(InPath)\Dot Net7 WPF Obfuscar.dll" />
+</Obfuscator>
