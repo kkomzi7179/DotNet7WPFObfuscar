@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="obfuscar.console Obfuscar.xml" />
+    <Exec Command="cd $(ProjectDir)&#xD;&#xA;&quot;$(Obfuscar)&quot; Obfuscar.xml&#xD;&#xA;copy &quot;$(OutputPath)\Obfuscated\$(AssemblyName).dll&quot; &quot;$(OutputPath)\$(AssemblyName).dll&quot;" />
   </Target>
 
 </Project>
