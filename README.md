@@ -1,0 +1,1 @@
+# Dot Net7 WPF Obfuscar
